@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -26,6 +27,10 @@ public class OutlookEmail {
       Map<String, InputStream> attachments) {
     try {
       // Checking if platform is windows
+      var system = System.getProperty("os.name").toLowerCase(Locale.getDefault());
+      if (!system.contains("win")) {
+        throw new RuntimeException("This method only works on the Windows platform!");
+      }
 
       // Preparing data for visual basic script
       var paramTo = to.isEmpty() ? "" : String.join(";", to);
