@@ -27,7 +27,6 @@ public class OutlookEmail {
     try {
       // Checking if platform is windows
 
-
       // Preparing data for visual basic script
       var paramTo = to.isEmpty() ? "" : String.join(";", to);
       var paramCc = cc.isEmpty() ? "" : String.join(";", cc);
