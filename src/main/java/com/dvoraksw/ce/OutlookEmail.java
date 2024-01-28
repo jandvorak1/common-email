@@ -15,6 +15,18 @@ public class OutlookEmail {
 
   private static final String VBSCRIPT_FILE = "EmailSender.vbs";
 
+/**
+*
+ * @param from
+ * @param to
+ * @param cc
+ * @param bcc
+ * @param subject
+ * @param text
+ * @param html
+ * @param images
+ * @param attachments
+*/
   public static void send(
       String from,
       List<String> to,
